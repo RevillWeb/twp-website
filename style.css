@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+a {
+    color: #0170BA;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav {
+    background-color: #0170BA;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav a {
+    text-decoration: none;
+    color: #FFF;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+}
+nav a span {
+    margin: 0 20px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #0170BA;
+    transition: border-color ease-in 100ms;
+}
+nav a.active span, nav a:hover span {
+    border-color: #FFF;
+}
+header {
+    padding: 40px 40px 0 40px;
+    background: url("assets/images/kindajean.png");
+    min-height: 300px;
+}
+header .top {
+    display: flex;
+    flex-direction: row;
+}
+header .left {
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+header .right {
+    flex-shrink: 1;
+    flex-grow: 1;
+    padding: 0 40px 40px 40px;
+}
+header h1 {
+    margin: 20px 0;
+    color: #333;
+    font-weight: 300;
+}
+header .form-group label {
+    display: block;
+    font-size: 22px;
+    color: #f16529;
+    margin-bottom: 20px;
+}
+header .form-group .input-btn-group {
+    display: flex;
+    height: 60px;
+}
+header .form-group .input-btn-group input {
+    flex: 1;
+    font-size: 1.2em;
+    padding: 0 10px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+header .form-group .input-btn-group button {
+    width: 120px;
+    border: none;
+    background-color: #f16529;
+    color: #FFFFFF;
+    font-size: 18px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+header .bottom {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    background-color: #333;
+    margin: 30px -40px 0 -40px;
+}
+header .bottom a {
+    flex: 1;
+    text-align: center;
+    color: #CCC;
+    text-decoration: none;
+}
+header .bottom a .icon {
+    font-size: 22px;
+    vertical-align: text-bottom;
+    margin-right: 5px;
+}
+header .bottom a:hover {
+    color: #FFF;
+}
+.view {
+    display: flex;
+    width: 200%;
+    will-change: transform;
+    transition: transform ease-in 300ms;
+    overflow: hidden;
+}
+.view h2 {
+    margin-top: 0;
+    color: #0170BA;
+}
+.view .page {
+    min-width: 50%;
+    display: inline-block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.view.show-episode {
+    transform: translateX(-50%);
+    overflow-x: visible;
+}
+ul.episode-list {
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+ul.episode-list li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+ul.episode-list li .info {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFF;
+    background-color: #0170BA;
+}
+ul.episode-list.latest li .info {
+    background-color: #f16529;
+}
+ul.episode-list li .info .number {
+ flex: 1;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 3em;
+ padding-top: 10px;
+}
+ul.episode-list li .info .date {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8em;
+
+}
+ul.episode-list.latest li {
+    margin-bottom: 0;
+}
+ul.episode-list li .content {
+    padding: 20px;
+    background-color: #F1F1F1;
+    flex: 1;
+}
+ul.episode-list li .content h3 {
+    margin: 0;
+    font-weight: 300;
+}
+ul.episode-list li .content audio {
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+.back {
+    color: #f16529;
+    border-right: solid 2px #CCC;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.back .icon {
+    vertical-align: middle;
+    display: inline-block;
+    margin-bottom: 3px;
+}

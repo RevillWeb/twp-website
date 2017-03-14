@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/fonts/icons.css">
+</head>
+<body>
+    <nav>
+        <a href="#" class="active"><span>EPISODES</span></a>
+        <a href="#"><span>ABOUT</span></a>
+        <a href="#"><span>SPONSORS</span></a>
+        <a href="#"><span>HOSTS</span></a>
+    </nav>
+    <header>
+        <div class="top">
+            <div class="left">
+                <img src="assets/images/logo.png" height="300">
+            </div>
+            <div class="right">
+                <h1><strong>The Web Platform Podcast</strong>: A weekly show that dives deep into all things web from the developers building the platform today</h1>
+                <form>
+                    <div class="form-group">
+                        <label>Get updates on all things web...</label>
+                        <div class="input-btn-group">
+                            <input type="email" />
+                            <button>Sign Up!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="#"><span class="icon icon-music"></span> iTunes</a>
+            <a href="#"><span class="icon icon-youtube"></span> YouTube</a>
+            <a href="#"><span class="icon icon-music2"></span> Google Music</a>
+        </div>
+    </header>
+    <div class="view">
+        <div class="page episodes">
+            <h2>LATEST EPISODE</h2>
+            <ul class="episode-list latest">
+                <li data-id="124">
+                    <div class="info">
+                        <div class="number">124</div>
+                        <div class="date">
+                            Wed, 1 March 2017</div>
+                    </div>
+                    <div class="content">
+                        <h3>Web Components, TypeScript, and Bears Oh My with <a href="#">Kito Mann</a></h3>
+                        <audio controls></audio>
+                    </div>
+                </li>
+            </ul>
+            <h2>PREVIOUS EPISODES</h2>
+            <ul class="episode-list">
+                <li data-id="123">
+                    <div class="info">
+                        <div class="number">123</div>
+                        <div class="date">
+                            Wed, 1 February 2017</div>
+                    </div>
+                    <div class="content">
+                        <h3>Universal Web Components with <a href="#">Jordan Last</a></h3>
+                        <audio controls></audio>
+                    </div>
+                </li>
+                <li data-id="122">
+                    <div class="info">
+                        <div class="number">122</div>
+                        <div class="date">
+                            Wed, 1 February 2017</div>
+                    </div>
+                    <div class="content">
+                        <h3>JAMStack & Static Applications with <a href="#">Brian Douglas</a></h3>
+                        <audio controls></audio>
+                    </div>
+                </li>
+                <li data-id="121">
+                    <div class="info">
+                        <div class="number">121</div>
+                        <div class="date">
+                            Wed, 13 January 2017</div>
+                    </div>
+                    <div class="content">
+                        <h3>The WebComponents.org Relaunch with <a href="#">Taylor Savage</a> & <a href="#">Sam Li</a></h3>
+                        <audio controls></audio>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="page episode">
+            <h2><a href="#" class="back"><span class="icon icon-arrow-left2"></span></a><span class="title"></span></h2>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+        const $episodes = document.querySelectorAll(".episode-list li");
+        const $view = document.querySelector(".view");
+        const $title = document.querySelector(".episode h2 .title");
+        const $back = document.querySelector(".back");
+        $episodes.forEach(($li) => {
+            $li.addEventListener("click", () => {
+                $title.innerText = $li.querySelector("h3").innerText;
+                window.location.hash = $li.dataset.id;
+                $view.classList.add("show-episode");
+            });
+        });
+        $back.addEventListener("click", (event) => {
+            event.preventDefault();
+            $view.classList.remove("show-episode");
+        });
+
+    </script>
+</body>
+</html>
